@@ -1,0 +1,74 @@
+@use "resolutions" as *;
+
+:root {
+  --c-beaver: #9e7f66;
+  --c-codGray: #111111;
+  --c-mirage: #17192b;
+  --c-ebonyClay: #242b37;
+  --c-shuttleGray: #5c6779;
+
+  /* Fonts Family */
+  --f-family: "League Spartan", serif;
+
+  /* Body */
+  --body-f-s: 1.6rem; //mobile
+  --body-f-m: 2rem; //tablet, desktop
+
+  --body-lh-s: 1.6; //26/16
+  --body-lh-m: 1.5; //30/20
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%; //10px/16px = 62.5%, 1rem = 10px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--f-family);
+  font-weight: 400; //Regular
+  font-size: var(--body-f-s);
+  line-height: var(--body-lh-s);
+
+  @include tablet {
+    font-size: var(--body-f-m);
+    line-height: var(--body-lh-m);
+  }
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}

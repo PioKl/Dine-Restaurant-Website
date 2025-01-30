@@ -1,0 +1,53 @@
+h1 {
+  font-size: 8rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+h2 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.25px;
+}
+h4 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 2.5px;
+}
+
+.btn {
+  padding: 2.5rem 4.8rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: white;
+  border: 0.1rem solid white;
+  background-color: transparent;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--c-mirage);
+    background-color: white;
+  }
+
+  &.--light {
+    color: var(--c-codGray);
+    border-color: var(--c-codGray);
+
+    &:hover,
+    &:focus-visible {
+      color: white;
+      background-color: var(--c-codGray);
+    }
+  }
+}
