@@ -1,4 +1,5 @@
 @use "resolutions" as *;
+@use "typography.scss" as *;
 
 :root {
   --c-beaver: #9e7f66;
@@ -40,11 +41,10 @@ body {
   min-height: 100vh;
   font-family: var(--f-family);
   font-weight: 400; //Regular
-  font-size: var(--body-f-s);
+  font-size: clamp(var(--body-f-s), 1.218rem + 1.018vw, var(--body-f-m));
   line-height: var(--body-lh-s);
 
   @include tablet {
-    font-size: var(--body-f-m);
     line-height: var(--body-lh-m);
   }
 }
@@ -71,4 +71,9 @@ textarea,
 button,
 select {
   font: inherit;
+}
+
+.wrapper {
+  width: min(1110px, calc(100% - 48px));
+  margin-inline: auto;
 }
