@@ -1,5 +1,6 @@
 @use "resolutions" as *;
 @use "typography.scss" as *;
+@use "variables.scss" as *;
 
 :root {
   --c-beaver: #9e7f66;
@@ -18,6 +19,7 @@
   --body-lh-s: 1.6; //26/16
   --body-lh-m: 1.5; //30/20
 }
+
 *,
 *::before,
 *::after {
@@ -43,6 +45,7 @@ body {
   font-weight: 400; //Regular
   font-size: clamp(var(--body-f-s), 1.218rem + 1.018vw, var(--body-f-m));
   line-height: var(--body-lh-s);
+  overflow-x: hidden;
 
   @include tablet {
     line-height: var(--body-lh-m);
