@@ -19,10 +19,16 @@ h1 {
   }
 }
 h2 {
-  font-size: 4.8rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.5px;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+
+  @include tablet {
+    font-size: 4.8rem;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
 }
 h3 {
   font-size: 2rem;
