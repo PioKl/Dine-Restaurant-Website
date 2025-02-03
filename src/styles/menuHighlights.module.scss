@@ -1,0 +1,8 @@
+@use "./base/resolutions.scss" as *;
+@use "./base/variables.scss" as *;
+
+.menu-section {
+  height: 761px;
+  background-color: black;
+  margin-bottom: $marginBottomRestaurantAndMenuHighlights;
+}
