@@ -1,8 +1,107 @@
 @use "./base/resolutions.scss" as *;
 @use "./base/variables.scss" as *;
 
+$menuItemGap: 6.2rem;
+
 .menu-section {
-  height: 761px;
-  background-color: black;
+  padding-top: 7.2rem;
+  padding-bottom: 10.2rem;
   margin-bottom: $marginBottomRestaurantAndMenuHighlights;
+  background-color: black;
+  color: white;
+}
+
+.description-container {
+  max-width: 32.7rem;
+  text-align: center;
+
+  @include tablet {
+    max-width: 44.5rem;
+  }
+  &__image {
+    margin-bottom: 3.6rem;
+    margin-inline: auto;
+  }
+
+  &__heading {
+    margin-bottom: 1.3rem;
+  }
+
+  &__description {
+    margin-bottom: 8.5rem;
+  }
+}
+
+.menu-container {
+  &__items-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+    text-align: center;
+
+    & :last-child {
+      border-bottom: none;
+
+      @include tablet {
+        padding-bottom: 0;
+      }
+
+      .menu-container__item-description-container {
+        margin-bottom: 0;
+      }
+    }
+
+    @include tablet {
+      max-width: 57.3rem;
+      margin-inline: auto;
+      text-align: start;
+    }
+  }
+
+  &__item {
+    margin-inline: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    @include tablet {
+      display: flex;
+      margin-inline: initial;
+      column-gap: $menuItemGap;
+      padding-bottom: 2.4rem;
+    }
+  }
+
+  &__item-picture {
+    margin-bottom: 3.6rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+  &__item-description-container {
+    margin-bottom: 5.4rem;
+
+    @include tablet {
+      margin-top: 0.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__item-heading {
+    margin-bottom: 0.6rem;
+
+    @include tablet {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -$menuItemGap;
+        display: block;
+        width: 3.2rem;
+        height: 0.1rem;
+        background-color: #9e7f66;
+      }
+    }
+  }
 }
