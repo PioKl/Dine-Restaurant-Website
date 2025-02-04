@@ -11,39 +11,63 @@ import locallySourcedDesktop from "../assets/images/homepage/locally-sourced-des
 import locallySourcedTablet from "../assets/images/homepage/locally-sourced-tablet.jpg";
 import locallySourcedMobile from "../assets/images/homepage/locally-sourced-mobile.jpg";
 
-import familyDesktop from "../assets/images/homepage/family-gathering-desktop@2x.jpg";
-import familyTablet from "../assets/images/homepage/family-gathering-tablet@2x.jpg";
-import familyMobile from "../assets/images/homepage/family-gathering-mobile@2x.jpg";
+import familyDesktop from "../assets/images/homepage/family-gathering-desktop.jpg";
+import familyTablet from "../assets/images/homepage/family-gathering-tablet.jpg";
+import familyMobile from "../assets/images/homepage/family-gathering-mobile.jpg";
+
+import specialEventsDesktop from "../assets/images/homepage/special-events-desktop.jpg";
+import specialEventsTablet from "../assets/images/homepage/special-events-tablet.jpg";
+import specialEventsMobile from "../assets/images/homepage/special-events-mobile.jpg";
+
+import socialEventsDesktop from "../assets/images/homepage/social-events-desktop.jpg";
+import socialEventsTablet from "../assets/images/homepage/social-events-tablet.jpg";
+import socialEventsMobile from "../assets/images/homepage/social-events-mobile.jpg";
 
 //import patternCurveBottomRight from "../assets/patterns/pattern-curve-bottom-right.svg";
 import patternCurveTopLeft from "../assets/patterns/pattern-curve-top-left.svg";
 import patternCurveTopRight from "../assets/patterns/pattern-curve-top-right.svg";
+import { useState } from "react";
 
-interface RestaurantHighlightsProps {
-  option: "first" | "second" | "third";
+interface RestaurantHighlightsClassicProps {
+  option: "first" | "second";
   heading: string;
   description: string;
-  menuOptions?: string[];
+  menuOptions?: never;
 }
+
+interface RestaurantHighlightsThirdOptionProps {
+  option: "third";
+  heading?: never;
+  description?: never;
+  menuOptions: { heading: string; description: string }[];
+}
+
+type RestaurantHighlightsProps =
+  | RestaurantHighlightsClassicProps
+  | RestaurantHighlightsThirdOptionProps;
 
 const images: Record<
   "desktop" | "tablet" | "mobile",
-  Record<RestaurantHighlightsProps["option"], string>
+  {
+    first: string;
+    second: string;
+    third: string[];
+  }
 > = {
   desktop: {
     first: enjoyableDesktop,
     second: locallySourcedDesktop,
-    third: familyDesktop,
+    third: [familyDesktop, specialEventsDesktop, socialEventsDesktop],
   },
   tablet: {
     first: enjoyableTablet,
     second: locallySourcedTablet,
-    third: familyTablet,
+    third: [familyTablet, specialEventsTablet, socialEventsTablet],
   },
   mobile: {
     first: enjoyableMobile,
     second: locallySourcedMobile,
-    third: familyMobile,
+    third: [familyMobile, specialEventsMobile, socialEventsMobile],
   },
 };
 
@@ -59,6 +83,8 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
   description,
   menuOptions,
 }) => {
+  const [menuOption, setMenuOption] = useState(0);
+
   return (
     <>
       <section
@@ -98,13 +124,28 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
           <picture className={`${styles["image-container__image"]}`}>
             <source
               media="(min-width: 1110px)"
-              srcSet={images["desktop"][option]}
+              srcSet={
+                option !== "third"
+                  ? images["desktop"][option]
+                  : images["desktop"][option][menuOption]
+              }
             />
             <source
               media="(min-width: 768px)"
-              srcSet={images["tablet"][option]}
+              srcSet={
+                option !== "third"
+                  ? images["tablet"][option]
+                  : images["tablet"][option][menuOption]
+              }
             />
-            <img src={images["mobile"][option]} alt="section-image" />
+            <img
+              src={
+                option !== "third"
+                  ? images["mobile"][option]
+                  : images["mobile"][option][menuOption]
+              }
+              alt="section-image"
+            />
           </picture>
         </div>
         <div
@@ -127,14 +168,16 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
               styles[`--${option}`]
             }`}
           >
-            {heading}
+            {option !== "third" ? heading : menuOptions[menuOption].heading}
           </h2>
           <p
             className={`${styles["description-container__description"]} ${
               styles[`--${option}`]
             }`}
           >
-            {description}
+            {option !== "third"
+              ? description
+              : menuOptions[menuOption].description}
           </p>
           {option === "third" && (
             <button
@@ -151,13 +194,17 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
                 <li
                   key={index}
                   className={`${styles["description-container__event-button-item"]}`}
+                  onClick={() => {
+                    setMenuOption(index);
+                  }}
                 >
                   <button
+                    key={index}
                     className={`${
                       styles["description-container__event-button"]
-                    }  ${styles[`--active`]}`}
+                    }  ${index === menuOption && styles["--active"]}`}
                   >
-                    {item}
+                    {item.heading}
                   </button>
                 </li>
               ))}
