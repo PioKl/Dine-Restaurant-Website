@@ -6,6 +6,7 @@ $sectionMargin: clamp(10.1rem, 8.478rem + 4.326vw, 11.8rem);
 $firstPatternCurveRightPositionedTablet: 25%;
 $firstPatternCurveRightPositionedDesktop: 17.3%;
 $secondPatternCurveLeftPositionedTablet: 33.5%;
+$restaurantHighlightsGap: 12.5rem;
 
 .restaurant-highlights {
   position: relative;
@@ -17,7 +18,7 @@ $secondPatternCurveLeftPositionedTablet: 33.5%;
   @include desktopSmall {
     display: flex;
     text-align: left;
-    column-gap: 12.5rem;
+    column-gap: $restaurantHighlightsGap;
   }
 
   &.--first {
@@ -256,6 +257,7 @@ $secondPatternCurveLeftPositionedTablet: 33.5%;
 
       @include desktopSmall {
         order: 2;
+        min-height: 12rem;
       }
     }
   }
@@ -294,6 +296,7 @@ $secondPatternCurveLeftPositionedTablet: 33.5%;
     align-items: center;
     background: none;
     border: none;
+    color: #4c4c4c;
     cursor: pointer;
     width: 100%;
     font-size: 1.7rem;
@@ -301,7 +304,12 @@ $secondPatternCurveLeftPositionedTablet: 33.5%;
     line-height: 1.6;
     letter-spacing: 2.5px;
     font-weight: 600;
-    //opacity: 0.5;
+    opacity: 0.5;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
 
     @include tablet {
       row-gap: 0.8rem;
@@ -310,9 +318,12 @@ $secondPatternCurveLeftPositionedTablet: 33.5%;
     @include desktopSmall {
       position: relative;
       align-items: flex-start;
+      transition: opacity 0.2s ease-in-out;
     }
 
     &.--active {
+      opacity: 1;
+
       &::after {
         content: "";
         display: block;
@@ -325,7 +336,7 @@ $secondPatternCurveLeftPositionedTablet: 33.5%;
         &::after {
           position: absolute;
           top: 50%;
-          left: -12.5rem; //wartość column-gap
+          left: -$restaurantHighlightsGap; //wartość column-gap
           transform: translateY(-50%);
           width: 9.5rem;
         }
