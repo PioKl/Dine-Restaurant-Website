@@ -74,4 +74,16 @@ h4 {
       background-color: var(--c-codGray);
     }
   }
+
+  &.--dark {
+    color: white;
+    background-color: var(--c-codGray);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--c-codGray);
+      border-color: var(--c-codGray);
+      background-color: transparent;
+    }
+  }
 }
