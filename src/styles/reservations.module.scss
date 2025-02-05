@@ -1,0 +1,38 @@
+@use "./base/resolutions.scss" as *;
+
+.reservations-section {
+  color: white;
+  background-image: url(../assets/images/homepage/ready-bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include tablet {
+    background-image: url(../assets/images/homepage/ready-bg-tablet.jpg);
+  }
+
+  @include desktopSmall {
+    background-image: url(../assets/images/homepage/ready-bg-desktop@2x.jpg);
+  }
+}
+
+.reservations-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 2rem;
+  max-width: 32.7rem;
+  padding-block: 8.4rem 8rem;
+
+  @include tablet {
+    row-gap: 2.4rem;
+    padding-block: 7.2rem 6.4rem;
+    max-width: initial;
+  }
+
+  @include desktopSmall {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 8.8rem;
+  }
+}
