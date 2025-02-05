@@ -181,7 +181,7 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
           </p>
           {option === "third" && (
             <button
-              className={`btn --light ${styles["description-container__book-table-button"]}`}
+              className={`btn --dark ${styles["description-container__book-table-button"]}`}
             >
               Book a Table
             </button>
