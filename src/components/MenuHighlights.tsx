@@ -10,8 +10,8 @@ import chocolateMobile from "../assets/images/homepage/chocolate-mobile@2x.jpg";
 
 export default function MenuHighlights() {
   return (
-    <section className={`${styles["menu-section"]}`}>
-      <div className={`wrapper ${styles["description-container"]}`}>
+    <section className={`wrapper ${styles["menu-section"]}`}>
+      <div className={`${styles["description-container"]}`}>
         <img
           className={`${styles["description-container__image"]}`}
           src={patternDivide}
@@ -25,7 +25,7 @@ export default function MenuHighlights() {
           our diner’s favourites. Our menu is revamped every season.
         </p>
       </div>
-      <div className={`wrapper ${styles["menu-container"]}`}>
+      <div className={`${styles["menu-container"]}`}>
         <ul className={`${styles["menu-container__items-list"]}`}>
           <li className={`${styles["menu-container__item"]}`}>
             <picture className={`${styles["menu-container__item-picture"]}`}>
