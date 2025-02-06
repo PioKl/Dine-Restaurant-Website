@@ -1,17 +1,28 @@
 @use "./base/resolutions.scss" as *;
 
-.reservations-section {
+.reservations-container {
   color: white;
   background-image: url(../assets/images/homepage/ready-bg-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-
   @include tablet {
     background-image: url(../assets/images/homepage/ready-bg-tablet.jpg);
   }
 
   @include desktopSmall {
     background-image: url(../assets/images/homepage/ready-bg-desktop@2x.jpg);
+  }
+
+  &.--hero {
+    background-image: url(../assets/images/booking/hero-bg-mobile.jpg);
+
+    @include tablet {
+      background-image: url(../assets/images/booking/hero-bg-tablet.jpg);
+    }
+
+    @include desktopSmall {
+      background-image: url(../assets/images/booking/hero-bg-desktop.jpg);
+    }
   }
 }
 
@@ -34,5 +45,83 @@
     flex-direction: row;
     justify-content: space-between;
     padding-block: 8.8rem;
+  }
+
+  &.--hero {
+    row-gap: 0;
+    padding-block: 5.6rem 22.8rem;
+
+    @include tablet {
+      padding-bottom: 26.8rem;
+    }
+
+    @include desktopSmall {
+      flex-direction: column;
+      align-items: start;
+      text-align: start;
+      padding-block: 6.5rem 15.3rem;
+
+      h1,
+      p {
+        max-width: 44.5rem;
+      }
+    }
+
+    h1 {
+      margin-bottom: 1.3rem;
+
+      @include tablet {
+        margin-bottom: 1.2rem;
+      }
+
+      @include desktopSmall {
+        margin-bottom: 1.8rem;
+      }
+    }
+
+    p {
+      margin-bottom: 1.9rem;
+
+      @include desktopSmall {
+        margin-bottom: 0;
+      }
+    }
+
+    button {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__logo-image {
+    margin-bottom: 7rem;
+
+    @include tablet {
+      margin-right: auto;
+    }
+
+    @include desktopSmall {
+      margin-bottom: 15.3rem;
+    }
+  }
+}
+
+.reservation {
+  min-height: 53.4rem;
+
+  @include tablet {
+    min-height: 43.5rem;
+  }
+
+  @include desktopSmall {
+    min-height: 31.9rem;
+  }
+  &__pattern-curve {
+    display: none;
+
+    @include desktopSmall {
+      display: block;
+    }
   }
 }
