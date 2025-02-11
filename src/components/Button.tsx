@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface ButtonProps {
   buttonType: "normal" | "light" | "dark";
   linkToBooking: boolean;
@@ -15,9 +17,9 @@ const Button: React.FC<ButtonProps> = ({
     buttonType !== "normal" ? `--${buttonType}` : ""
   } ${className || ""}`;
   return linkToBooking ? (
-    <a href="/booking">
+    <Link to="/booking">
       <button className={buttonClass}>{text}</button>
-    </a>
+    </Link>
   ) : (
     <button className={buttonClass}>{text}</button>
   );
