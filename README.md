@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Dine Website Challenge solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### The challenge
 
-- Configure the top-level `parserOptions` property like this:
+Users should be able to:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
+- Receive an error message when the booking form is submitted if:
+  - The `Name` or `Email Address` fields are empty should show "This field is required"
+  - The `Email Address` is not formatted correctly should show "Please use a valid email address"
+  - Any of the `Pick a date` or `Pick a time` fields are empty should show "This field is incomplete"
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Screenshot
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+![mobile](./src/assets/resolutionPreview/dineMobile.png)
+![tablet](./src/assets/resolutionPreview/dineTablet.png)
+![desktop](./src/assets/resolutionPreview/dineDesktop.png)
+![mobile-booking](./src/assets/resolutionPreview/dineMobileBooking.png)
+![tablet-booking](./src/assets/resolutionPreview/dineBookingTablet.png)
+![desktop-booking](./src/assets/resolutionPreview/dineBookingDesktop.png)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Links
+
+- Solution URL: [https://github.com/PioKl/Dine-Restaurant-Website]
+- Live Site URL: [https://piokl.github.io/Dine-Restaurant-Website/]
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- SCSS
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Typescript](https://www.typescriptlang.org/) - JS syntax
+- [Vite](https://vite.dev/) - Fast frontend build tool
+
+### What I learned
+
+Practice with: React (hooks, routing) and Typescript (generally and types/interface), flex, forms (validation)
+CSS: transforms, positioning
+
+### Useful resources
+
+- [Clamp Calculator](https://www.marcbacon.com/tools/clamp-calculator/) - To clamp fonts
+
+## Author
+
+- Website - [PioKl](https://github.com/PioKl)
+- Frontend Mentor - [@PioKl](https://www.frontendmentor.io/profile/PioKl)
