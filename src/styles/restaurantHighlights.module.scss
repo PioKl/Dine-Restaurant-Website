@@ -262,7 +262,7 @@ $restaurantHighlightsGap: 12.5rem;
     }
   }
 
-  &__book-table-button {
+  a {
     order: 4;
 
     @include desktopSmall {
