@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import styles from "../styles/reservations.module.scss";
 import logo from "../assets/logo.svg";
@@ -289,13 +290,13 @@ const Reservations: React.FC<ReservationsProps> = ({ type }) => {
             {type === "banner" && <h2>Ready to make a reservation?</h2>}
             {type === "hero" && (
               <>
-                <a href="/">
+                <Link to="/">
                   <img
                     className={`${styles["reservations-content__logo-image"]}`}
                     src={logo}
                     alt="Restaurant Logo"
                   />
-                </a>
+                </Link>
 
                 <h1>Reservations</h1>
                 <p>
