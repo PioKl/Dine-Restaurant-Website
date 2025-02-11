@@ -1,5 +1,6 @@
 import logo from "../assets/logo.svg";
 import styles from "../styles/hero.module.scss";
+import Button from "./Button";
 
 export default function Hero() {
   return (
@@ -17,7 +18,11 @@ export default function Hero() {
               Experience our seasonal menu in beautiful country surroundings.
               Eat the freshest produce from the comfort of our farmhouse.
             </p>
-            <button className="btn">Book a Table</button>
+            <Button
+              buttonType="normal"
+              linkToBooking={true}
+              text="Book a Table"
+            />
           </div>
         </div>
       </section>
