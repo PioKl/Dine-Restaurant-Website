@@ -5,4 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/Dine-Restaurant-Website/",
   plugins: [react()],
+  define: {
+    "process.env": {
+      VITE_BASE_URL: "/Dine-Restaurant-Website/",
+    },
+  },
 });
