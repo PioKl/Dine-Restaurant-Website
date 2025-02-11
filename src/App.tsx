@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <Router basename="/Dine-Restaurant-Website">
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route
             path="/"
