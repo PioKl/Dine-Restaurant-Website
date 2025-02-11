@@ -33,7 +33,7 @@ Users should be able to:
 ![mobile](./src/assets/resolutionPreview/dineMobile.png)
 ![tablet](./src/assets/resolutionPreview/dineTablet.png)
 ![desktop](./src/assets/resolutionPreview/dineDesktop.png)
-![mobile-booking](./src/assets/resolutionPreview/dineMobileBooking.png)
+![mobile-booking](./src/assets/resolutionPreview/dineBookingMobile.png)
 ![tablet-booking](./src/assets/resolutionPreview/dineBookingTablet.png)
 ![desktop-booking](./src/assets/resolutionPreview/dineBookingDesktop.png)
 
