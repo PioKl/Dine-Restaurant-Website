@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route
             path="/"
