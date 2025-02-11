@@ -174,15 +174,19 @@ $restaurantHighlightsGap: 12.5rem;
       }
 
       @include desktopSmall {
-        right: -5.8rem;
+        right: -11.4rem;
         bottom: 36.2rem;
       }
     }
 
     &.--third {
       @include tablet {
-        left: 0;
+        left: -5.9rem;
         top: -3.5rem;
+      }
+
+      @include desktopSmall {
+        left: -4rem;
       }
     }
   }
