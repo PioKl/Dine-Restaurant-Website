@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import styles from "../styles/hero.module.scss";
 import Button from "./Button";
@@ -8,9 +9,9 @@ export default function Hero() {
       <section className={styles.hero}>
         <div className={`wrapper ${styles["hero__wrapper"]}`}>
           <div className={`${styles["hero__content"]}`}>
-            <a className={styles["hero__logo"]} href="/" aria-label="homepage">
+            <Link className={styles["hero__logo"]} to="/" aria-label="homepage">
               <img src={logo} alt="Restaurant Logo" />
-            </a>
+            </Link>
             <h1 className={styles["hero__heading"]}>
               Exquisite dining since 1989
             </h1>
