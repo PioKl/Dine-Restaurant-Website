@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Button from "./Button";
+
 import styles from "../styles/restaurantHighlights.module.scss";
 
 import patternDivide from "../assets/patterns/pattern-divide.svg";
@@ -23,10 +26,8 @@ import socialEventsDesktop from "../assets/images/homepage/social-events-desktop
 import socialEventsTablet from "../assets/images/homepage/social-events-tablet.jpg";
 import socialEventsMobile from "../assets/images/homepage/social-events-mobile.jpg";
 
-//import patternCurveBottomRight from "../assets/patterns/pattern-curve-bottom-right.svg";
 import patternCurveTopLeft from "../assets/patterns/pattern-curve-top-left.svg";
 import patternCurveTopRight from "../assets/patterns/pattern-curve-top-right.svg";
-import { useState } from "react";
 
 interface RestaurantHighlightsClassicProps {
   option: "first" | "second";
@@ -180,11 +181,12 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
               : menuOptions[menuOption].description}
           </p>
           {option === "third" && (
-            <button
-              className={`btn --dark ${styles["description-container__book-table-button"]}`}
-            >
-              Book a Table
-            </button>
+            <Button
+              buttonType="dark"
+              linkToBooking={true}
+              text="Book a Table"
+              className={styles["description-container__book-table-button"]}
+            />
           )}
           {option === "third" && menuOptions && (
             <ul
