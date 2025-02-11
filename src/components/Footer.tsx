@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "../styles/footer.module.scss";
 import logo from "../assets/logo.svg";
 
@@ -5,9 +6,9 @@ export default function Footer() {
   return (
     <footer className={`wrapper ${styles["footer"]}`}>
       <div className={`${styles["logo-container"]}`}>
-        <a
+        <Link
           className={styles["logo-container__logo-link"]}
-          href="/"
+          to="/"
           aria-label="homepage"
         >
           <img
@@ -15,7 +16,7 @@ export default function Footer() {
             src={logo}
             alt="Restaurant Logo"
           />
-        </a>
+        </Link>
       </div>
       <div className={`${styles["contact-details"]}`}>
         <ul>
