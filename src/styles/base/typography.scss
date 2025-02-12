@@ -53,6 +53,7 @@ h4 {
   color: white;
   border: 0.1rem solid white;
   background-color: transparent;
+  transition: all 0.3s ease-in-out;
 
   &:hover,
   &:focus-visible {
