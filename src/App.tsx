@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Hero from "./components/Hero";
 import RestaurantHighlights from "./components/RestaurantHighlights";
 import MenuHighlights from "./components/MenuHighlights";
@@ -67,6 +72,7 @@ function App() {
               </>
             }
           />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </>
