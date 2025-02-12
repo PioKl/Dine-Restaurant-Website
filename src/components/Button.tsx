@@ -17,8 +17,13 @@ const Button: React.FC<ButtonProps> = ({
     buttonType !== "normal" ? `--${buttonType}` : ""
   } ${className || ""}`;
   return linkToBooking ? (
-    <Link to="/booking">
-      <button className={buttonClass}>{text}</button>
+    <Link
+      to="/booking"
+      className={buttonClass}
+      role="link"
+      aria-label="Go to booking"
+    >
+      {text}
     </Link>
   ) : (
     <button className={buttonClass}>{text}</button>
