@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
+import { motion } from "framer-motion";
 
 import styles from "../styles/restaurantHighlights.module.scss";
 
@@ -114,15 +115,30 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
           }`}
         >
           {(option === "second" || option === "third") && (
-            <img
+            <motion.img
               className={`${styles["image-container__pattern-lines"]} ${
                 styles[`--${option}`]
               }`}
               src={patternLines}
               alt="pattern-lines"
+              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{
+                opacity: 1,
+                transition: { duration: 0.75, delay: 0.7 },
+              }}
             />
           )}
-          <picture className={`${styles["image-container__image"]}`}>
+          <motion.picture
+            className={`${styles["image-container__image"]}`}
+            viewport={{ once: true }}
+            initial={{ opacity: 0, scale: 0.85 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              transition: { duration: 0.75 },
+            }}
+          >
             <source
               media="(min-width: 1110px)"
               srcSet={
@@ -147,7 +163,7 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
               }
               alt="section-image"
             />
-          </picture>
+          </motion.picture>
         </div>
         <div
           className={`${styles["description-container"]} ${
@@ -171,15 +187,21 @@ const RestaurantHighlights: React.FC<RestaurantHighlightsProps> = ({
           >
             {option !== "third" ? heading : menuOptions[menuOption].heading}
           </h2>
-          <p
+          <motion.p
             className={`${styles["description-container__description"]} ${
               styles[`--${option}`]
             }`}
+            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 1, ease: "easeInOut" },
+            }}
           >
             {option !== "third"
               ? description
               : menuOptions[menuOption].description}
-          </p>
+          </motion.p>
           {option === "third" && (
             <Button
               buttonType="dark"
