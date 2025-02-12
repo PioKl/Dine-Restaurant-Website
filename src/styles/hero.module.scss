@@ -68,8 +68,8 @@
       @include desktopSmall {
         left: initial;
         transform: translateX(0);
-        right: 25%;
         background-color: black;
+        animation: moveBackground 0.75s ease-in-out forwards;
       }
     }
   }
@@ -104,5 +104,15 @@
     @include desktopSmall {
       max-width: 45rem;
     }
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    right: 100%;
+  }
+
+  100% {
+    right: 25%;
   }
 }
