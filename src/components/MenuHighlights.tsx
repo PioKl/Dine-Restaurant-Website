@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styles from "../styles/menuHighlights.module.scss";
 import patternDivide from "../assets/patterns/pattern-divide.svg";
 
@@ -27,7 +28,15 @@ export default function MenuHighlights() {
       </div>
       <div className={`${styles["menu-container"]}`}>
         <ul className={`${styles["menu-container__items-list"]}`}>
-          <li className={`${styles["menu-container__item"]}`}>
+          <motion.li
+            className={`${styles["menu-container__item"]}`}
+            viewport={{ once: true }}
+            initial={{ x: "-5%" }}
+            whileInView={{
+              x: "0",
+              transition: { duration: 0.75, ease: "easeInOut" },
+            }}
+          >
             <picture className={`${styles["menu-container__item-picture"]}`}>
               <source media="(min-width: 768px)" srcSet={salmonDesktopTablet} />
               <img src={salmonMobile} alt="picture of the dish" />
@@ -43,7 +52,7 @@ export default function MenuHighlights() {
                 summer salad.
               </p>
             </div>
-          </li>
+          </motion.li>
           <li className={`${styles["menu-container__item"]}`}>
             <picture className={`${styles["menu-container__item-picture"]}`}>
               <source media="(min-width: 768px)" srcSet={beefDesktopTablet} />
@@ -61,7 +70,15 @@ export default function MenuHighlights() {
               </p>
             </div>
           </li>
-          <li className={`${styles["menu-container__item"]}`}>
+          <motion.li
+            className={`${styles["menu-container__item"]}`}
+            viewport={{ once: true }}
+            initial={{ x: "5%" }}
+            whileInView={{
+              x: "0",
+              transition: { duration: 0.75, ease: "easeInOut" },
+            }}
+          >
             <picture className={`${styles["menu-container__item-picture"]}`}>
               <source
                 media="(min-width: 768px)"
@@ -80,7 +97,7 @@ export default function MenuHighlights() {
                 shavings.
               </p>
             </div>
-          </li>
+          </motion.li>
         </ul>
       </div>
     </section>
