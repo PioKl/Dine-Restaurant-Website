@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Button from "./Button";
 import styles from "../styles/reservations.module.scss";
 import logo from "../assets/logo.svg";
@@ -287,7 +288,18 @@ const Reservations: React.FC<ReservationsProps> = ({ type }) => {
               styles[`--${type}`]
             }`}
           >
-            {type === "banner" && <h2>Ready to make a reservation?</h2>}
+            {type === "banner" && (
+              <motion.h2
+                viewport={{ once: true }}
+                initial={{ scale: 0.85 }}
+                whileInView={{
+                  scale: 1,
+                  transition: { duration: 0.75 },
+                }}
+              >
+                Ready to make a reservation?
+              </motion.h2>
+            )}
             {type === "hero" && (
               <>
                 <Link to="/">
