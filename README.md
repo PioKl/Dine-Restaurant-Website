@@ -51,13 +51,14 @@ Users should be able to:
 - SCSS
 - Flexbox
 - Mobile-first workflow
+- Framer-Motion
 - [React](https://reactjs.org/) - JS library
 - [Typescript](https://www.typescriptlang.org/) - JS syntax
 - [Vite](https://vite.dev/) - Fast frontend build tool
 
 ### What I learned
 
-Practice with: React (hooks, routing) and Typescript (generally and types/interface), flex, forms (validation)
+Practice with: React (hooks, routing) and Typescript (generally and types/interface), flex, forms (validation), framer-motion
 CSS: transforms, positioning
 
 ### Useful resources
